@@ -1,0 +1,13 @@
+<form action="<?php bloginfo('url'); ?>/" method="GET" role="form">
+    <div class="form-group">
+        <input type="text" name="s" class="form-control" id="" placeholder="Từ khóa">
+    </div>
+    <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+</form>
+Đây là một đoạn mã HTML/PHP để tạo một ô tìm kiếm trên trang web WordPress.
+
+Trong đoạn mã này, ta sử dụng hàm bloginfo('url') để lấy đường dẫn trang chủ của trang web WordPress, và sử dụng phương thức GET để gửi dữ liệu tìm kiếm.
+
+Để sử dụng đoạn mã này trên trang web WordPress của bạn, bạn có thể đặt nó vào một file PHP và sau đó gọi nó trong file template của trang web của bạn bằng cách sử dụng hàm get_template_part() hoặc include().
+
+Ví dụ, nếu bạn muốn đặt ô tìm kiếm này vào thanh menu chính của trang web của bạn, bạn có thể đặt đoạn mã này vào file header.php của theme của bạn.
