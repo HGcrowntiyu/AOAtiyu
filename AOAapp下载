@@ -1,0 +1,23 @@
+<div class="widget">
+    <h3>
+        Bài viết xem nhiều
+    </h3>
+    <div class="content-w">
+        <ul>
+            <?php $getposts = new WP_query(); $getposts->query('post_status=publish&showposts=8&post_type=post&meta_key=views&orderby=meta_value_num'); ?>
+            <?php global $wp_query; $wp_query->in_the_loop = true; ?>
+            <?php while ($getposts->have_posts()) : $getposts->the_post(); ?>
+                 <li>
+                     <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                 </li>
+            <?php endwhile; wp_reset_postdata(); ?>
+        </ul>
+    </div>
+</div>
+This is a WordPress code snippet for displaying a widget that shows the 8 most viewed posts on a website. It is using a WP_query to get the posts with the most views by sorting them in descending order according to their meta value for the 'views' meta key.
+
+The code starts by defining a div container with a class of 'widget' and a heading with the text "Bài viết xem nhiều" (Most viewed posts). Inside the widget, there is a div with a class of 'content-w' and an unordered list with list items that display the title of each post.
+
+To get the most viewed posts, the code first creates a new instance of WP_query and sets the query arguments to show only published posts with a post type of 'post', sort them in descending order based on their 'views' meta key value, and limit the results to 8 posts. Then, a while loop is used to iterate over each post returned by the query and display its title as a link to its permalink.
+
+Finally, the wp_reset_postdata() function is called to restore the original post data, as the loop modifies the global $wp_query object. This code snippet can be used in a WordPress theme's sidebar or footer to display a widget with the most viewed posts on the website.
